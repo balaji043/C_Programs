@@ -5,7 +5,6 @@
 
 //MACRO or Pre-Processor Directives
 
-
 #define MaxLine 1000
 
 //declaration of global var
@@ -28,9 +27,30 @@ void print();
 
 int main() {
     printf("%s\n", __FUNCTION__);
-    checkVowelOrConsonant();
-    inputToOutput();
-    countLines();
+    char *a;
+/*    int length=0;
+    scanf("%s",a);
+    while(*a!='\0'){
+        length++;
+        a++;
+    }*/
+    int x=1,y=2;
+    printf("%d %d\n",x,y);
+    x=(x+y)-(y=x);
+    printf("%d %d",x,y);
+    ///printf("%d",length);
+    /*
+    float f=2.1;
+    if(f==2.1)
+        printf("Yes");
+    else
+        printf("No");
+    f=2.5;
+    if(f==2.5)
+        printf("Yes");
+    else
+        printf("No");
+*/
     return 0;
 }
 
@@ -86,7 +106,9 @@ void copy() {
     int i = 0;
     while ((longest[i] = line[i]) != '\0')++i;
 }
-
+bool isVowel(char a){
+    return (a=='a'||a=='e'||a=='i'||a=='o'||a=='u'||a=='A'||a=='E'||a=='I'||a=='O'||a=='U');
+}
 int checkVowelOrConsonant() {
     printf("%s\n", __FUNCTION__);
     char ch;
@@ -100,7 +122,29 @@ int checkVowelOrConsonant() {
     }
     return true;
 }
-
+void matrix(){
+    int a[5][5], matrix[5][5], rotated[5][5], n = 3, i, j;
+    for (int i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    for (int k = 0; k < 2; k++) {
+        for (int i = n - 1, i1 = 0; i >= 0; i--, i1++) {
+            for (int j = 0; j < n; j++) {
+                rotated[i1][j] = a[j][i];
+            }
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("%d ",rotated[i][j]);
+        }
+        printf("\n");
+    }
+}
 int stringLength(char *element) {
     printf("%s\n", __FUNCTION__);
     int size = 0;
